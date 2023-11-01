@@ -12,12 +12,13 @@ const InputField = ({ todoItem, setTodoItem }) => {
     const newTodoItem = [
       ...todoItem,
       {
-        id: todoItem.length + 1,
+        id: Date.now(),
         title,
         context,
         isDone: false,
       },
     ];
+    localStorage.setItem("todo", JSON.stringify(newTodoItem));
     setTodoItem(newTodoItem);
     setTitle("");
     setContext("");

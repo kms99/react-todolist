@@ -3,7 +3,9 @@ import InputField from "./InputField";
 import Card from "./Card";
 
 const Main = () => {
-  const [todoItem, setTodoItem] = useState([]);
+  const [todoItem, setTodoItem] = useState(
+    JSON.parse(localStorage.getItem("todo")) || []
+  );
   return (
     <div>
       <InputField todoItem={todoItem} setTodoItem={setTodoItem} />

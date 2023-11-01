@@ -15,6 +15,8 @@ const Card = ({ id, title, context, isDone, setTodoItem, todoItem }) => {
         isDone: e.target.checked,
       },
     ];
+
+    localStorage.setItem("todo", JSON.stringify(newArray));
     setTodoItem(newArray);
   };
 
@@ -22,6 +24,7 @@ const Card = ({ id, title, context, isDone, setTodoItem, todoItem }) => {
     const filterArray = todoItem.filter((item) => {
       return item.id !== id;
     });
+    localStorage.setItem("todo", JSON.stringify(filterArray));
     setTodoItem(filterArray);
   };
 
@@ -43,6 +46,7 @@ const Card = ({ id, title, context, isDone, setTodoItem, todoItem }) => {
         isDone,
       },
     ];
+    localStorage.setItem("todo", JSON.stringify(newArray));
     setTodoItem(newArray);
   };
 
