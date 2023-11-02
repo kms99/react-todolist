@@ -26,6 +26,7 @@ const InputField = ({ todoItem, setTodoItem }) => {
 
   return (
     <div className="input-field-container">
+      <h2 className="input-field-container__title">오늘 할일을 기록하세요</h2>
       <form className="input-field" onSubmit={addTodoEventHandler}>
         <div className="input-field__input-area">
           <InputAtom title={title} setTitle={setTitle} />

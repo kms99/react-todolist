@@ -4,10 +4,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  /* background: linear-gradient(#120f07 95%, transparent); */
+  border-bottom: 8px black dashed;
+  border-radius: 30px;
+  background-color: #e0e0c8dc;
+  box-sizing: border-box;
 }
 
 .main-header__title {
   margin: 0;
-  font-size: 3rem;
-  color: white;
+  font-size: 6rem;
+  color: #123c32;
 }
