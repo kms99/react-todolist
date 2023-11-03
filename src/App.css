@@ -9,15 +9,24 @@ html {
 }
 
 body {
-  background: url("/public/image/background.png");
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
+  position: relative;
   color: black;
 }
 
-.wrapper {
-  /* background: #e0e0c8; */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: url("/public/image/background.png");
+  background-position: center;
+  background-size: cover;
+}
+
+#root {
   height: auto;
   max-width: 120rem;
   min-width: 80rem;
