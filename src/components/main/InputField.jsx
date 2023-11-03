@@ -9,6 +9,9 @@ const InputField = ({ todoItem, setTodoItem }) => {
 
   const addTodoEventHandler = (e) => {
     e.preventDefault();
+
+    if (!inputCheck(title, context)) return;
+
     const newTodoItem = [
       ...todoItem,
       {
@@ -22,6 +25,19 @@ const InputField = ({ todoItem, setTodoItem }) => {
     setTodoItem(newTodoItem);
     setTitle("");
     setContext("");
+  };
+
+  const inputCheck = (titleValue, contextValue) => {
+    if (!titleValue && !contextValue) {
+      alert(`제목과 내용에 입력된 값이 없습니다.`);
+      return false;
+    }
+    if (!titleValue || !contextValue) {
+      let check = titleValue ? "내용" : "제목";
+      alert(`${check}에 입력된 값이 없습니다.`);
+      return false;
+    }
+    return true;
   };
 
   return (
